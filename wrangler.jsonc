@@ -1,0 +1,9 @@
+{
+  // Cloudflare Wrangler config (JSONC). This tells Wrangler/Pages where the
+  // built assets are so Workers/Pages Functions can access static files.
+  "name": "personal-website",
+  "compatibility_date": "2025-12-06",
+  "assets": {
+    "directory": "./dist"
+  }
+}
