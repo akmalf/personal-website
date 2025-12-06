@@ -1,11 +1,11 @@
 import type { IconMap, SocialLink, Site } from '@/types'
 
 export const SITE: Site = {
-  title: 'Your Blog Name',
+  title: 'Delta Method',
   description:
-    'A brief description of your blog. This will be used in meta tags and social sharing.',
-  href: 'https://yourdomain.com',
-  author: 'your-author-id',
+    'A personal website of Akmal Fadhlurrahman, sharing insights on data science, economics, and programming.',
+  href: 'https://akml.dev/',
+  author: 'akmal',
   locale: 'en-US',
   featuredPostCount: 2,
   postsPerPage: 6,
@@ -26,20 +26,20 @@ export const UMAMI = {
 // Disqus Comments
 // Get your shortname from https://disqus.com/admin/settings/general/
 // Set it as an environment variable: PUBLIC_DISQUS_SHORTNAME=your-shortname
-export const DISQUS = {
-  shortname: import.meta.env.PUBLIC_DISQUS_SHORTNAME || '',
-}
+// export const DISQUS = {
+//   shortname: import.meta.env.PUBLIC_DISQUS_SHORTNAME || '',
+// }
 
 // Brevo Newsletter
 // Get your API key from https://app.brevo.com/settings/keys/api
 // Set it as an environment variable: BREVO_API_KEY=your-api-key
 // Optional: Set BREVO_LIST_ID to automatically add subscribers to a specific list
 // Optional: Set BREVO_TEMPLATE_ID for double opt-in confirmation email (default: 5)
-export const BREVO = {
-  apiKey: import.meta.env.BREVO_API_KEY || '',
-  listId: import.meta.env.BREVO_LIST_ID || '',
-  templateId: import.meta.env.BREVO_TEMPLATE_ID || '5',
-}
+// export const BREVO = {
+//   apiKey: import.meta.env.BREVO_API_KEY || '',
+//   listId: import.meta.env.BREVO_LIST_ID || '',
+//   templateId: import.meta.env.BREVO_TEMPLATE_ID || '5',
+// }
 
 export const NAV_LINKS: SocialLink[] = [
   {
@@ -54,16 +54,16 @@ export const NAV_LINKS: SocialLink[] = [
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
-    href: 'https://github.com/username',
+    href: 'https://github.com/akmalf',
     label: 'GitHub',
   },
   {
-    href: 'https://twitter.com/username',
-    label: 'Twitter',
+    href: 'mailto:akmal.fadhlurrahman@gmail.com',
+    label: 'Email',
   },
   {
-    href: 'mailto:your@email.com',
-    label: 'Email',
+    href: 'https://www.linkedin.com/in/akmalf/',
+    label: 'LinkedIn',
   },
   {
     href: '/rss.xml',
