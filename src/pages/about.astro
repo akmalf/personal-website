@@ -14,8 +14,59 @@ const personSchema = {
   "url": SITE.href,
   "description": SITE.description
 }
+
+// Experience Timeline - Customize with your own experience
+type ExperienceItem = {
+  role: string
+  company: string
+  period: string
+  current?: boolean
+  icon: string
+  key: string
+}
+
+// Customize your experience here
+const experience: ExperienceItem[] = [
+  {
+    role: 'Data Scientist Consultant',
+    company: 'Visa',
+    period: '2025 – present',
+    current: true,
+    icon: 'lucide:credit-card',
+    key: 'Part of Visa Consulting and Analytics (VCA) team, delivering analytics and data science solutions to clients'
+  },
+  {
+    role: 'AVP, Deposit and Wealth Analytics',
+    company: 'UOB Indonesia',
+    period: '2022 - 2025',
+    icon: 'lucide:landmark',
+    key: `Part of Personal Financial Services (PFS) Business Analytics function. Driving the foundation of advanced analytics across banking products (CASA, Deposit, and Wealth) and secured product (Mortgage) with the deep-dive analysis, segmentation, and classification using data science and ML.`
+  },
+  {
+    role: 'Business Analyst',
+    company: 'Virgo',
+    period: '2020 - 2022',
+    icon: 'lucide:hand-coins',
+    key: 'Conduct implementation, tracking, and post-implementation review for promotion and marketing campaigns'
+  },
+  {
+    role: 'Data Scientist',
+    company: 'Home Credit Indonesia',
+    period: '2019 - 2020',
+    icon: 'lucide:store',
+    key: 'Assist with end-to-end big data acquisition, including POC, data quality evaluation, and account management'
+  },
+  {
+    role: 'Decision Management Analytic Specialist',
+    company: 'CIMB Niaga',
+    period: '2018 - 2019',
+    icon: 'lucide:messages-square',
+    key: 'Create automation and business process to send Instant Feedback SMS survey for phone banking users'
+  },
+]
+
 ---
-<Layout class="max-w-3xl">
+<Layout class="max-w-3xl font-regular">
   <PageHead slot="head" title="About" />
   
   <!-- Person Schema for About page SEO -->
@@ -28,7 +79,7 @@ const personSchema = {
     <div class="flex flex-col gap-4">
       <div>
         <h1 class="text-3xl md:text-4xl font-bold">About</h1>
-        <p class="text-sm text-muted-foreground font-mono mt-1">
+        <p class="text-sm text-muted-foreground mt-1">
           Learn more about this blog
         </p>
       </div>
@@ -46,4 +97,45 @@ const personSchema = {
       </p>
     </div>
   </section>
+
+  <!-- Experience Timeline -->
+  <section class="mt-8">
+    <div class="mb-6">
+      <h2 class="text-2xl font-semibold mb-2">Experience</h2>
+      <p class="text-sm text-muted-foreground">
+        Professional journey and achievements
+      </p>
+    </div>
+    
+    <div class="space-y-6">
+      {experience.map((exp, index) => (
+        <div class="relative">
+          {/* {index < experience.length - 1 && (
+            <div class="absolute left-[11px] top-10 bottom-0 w-px bg-border" aria-hidden="true"></div>
+          )} */}
+          
+            <div class="flex gap-6">
+            <div class={`relative flex-shrink-0 flex items-center justify-center pt-1 ring-4 ring-background z-20 w-[54px] h-[54px] rounded ${
+              exp.current ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20" : "bg-muted text-muted-foreground"
+            }`}>
+              <Icon name={exp.icon} class="size-4.5" />
+            </div>
+            
+            <div class="flex-1 pb-2 min-w-0">
+              <div class="mb-1">
+                <h3 class="font-semibold text-lg leading-tight">{exp.role}</h3>
+                <p class="text-sm text-muted-foreground">
+                  {exp.company} | {exp.period}
+                </p>
+              </div>
+              <p class="text-sm text-muted-foreground/90 leading-relaxed mt-2">
+                {exp.key}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
 </Layout>
