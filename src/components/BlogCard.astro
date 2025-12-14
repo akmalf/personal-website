@@ -21,22 +21,21 @@ const readTime = await getCombinedReadingTime(entry.id)
 const authors = await parseAuthors(entry.data.authors ?? [])
 const subpostCount = !isSubpost(entry.id) ? await getSubpostCount(entry.id) : 0
 ---
-
 <Link
   href={`/${entry.collection}/${entry.id}`}
   class="group block py-4 transition-all duration-200 hover:bg-muted/30 -mx-2 px-2 rounded-md"
 >
   <div class="flex items-start justify-between gap-4">
     <div class="flex-1 min-w-0 space-y-1">
-      <div class="flex items-baseline gap-2.5">
-        <h3 class="text-base font-semibold leading-snug group-hover:text-foreground transition-colors">
-          {entry.data.title}
-        </h3>
-        <span class="text-muted-foreground/60 text-xs font-normal whitespace-nowrap shrink-0">
+      <div class="space-y-1">
+        <span class="text-muted-foreground/60 text-xs font-normal block">
           {formattedDate}
         </span>
+        <h3 class="text-lg font-semibold leading-snug group-hover:text-foreground transition-colors">
+          {entry.data.title}
+        </h3>
       </div>
-      <p class="text-muted-foreground text-sm leading-snug line-clamp-1">
+      <p class="text-muted-foreground text-sm leading-snug line-clamp-2">
         {entry.data.description}
       </p>
       <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs text-muted-foreground/80">
